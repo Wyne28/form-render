@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head style = "margin: auto; display:flex; justify-items: center;">
+        <title>Add New Item</title>
+    </head>
+    <body style = "font-family: Aria, sans-serif; display:flex; justify-content: center; margin-top:30px;">
+        <form action="https://teach-backend-fawn.vercel.app/api/product" method="POST" enctype="multipart/form-data" style="width:900px;">
+            <fieldset style = "border-color: gray; border-radius:8px">
+                <legend>General Info</legend>
+                <div>
+                    <label for="itemName" style="display:inline-block;width:160px;">Item Name</label>
+                    <input
+                    type = "text"
+                    id = "itemname"
+                    name = "itemName"
+                    size = "50"
+                    maxlength = "60"
+                    />
+                </div>
+                <div>
+                    <label for ="itemDescription" style="display:inline-block;width:160px;">Description</label>
+                    <textarea
+                    id = "itemDescription" 
+                    name = "itemDescription"
+                    rows="6"
+                    cols="70" 
+                    > 
+                    </textarea>
+                </div>
+                <div>
+                    <label for="category" style="display:inline-block;width:160px;">Category</label>
+                    <select id = "category" name = "category">
+                        <option value = "notSpecified" selected>notSpecified</option>
+                        <option value = "Consumption">consumption</option>
+                        <option value = "Household">household</option>
+                        <option value = "Electronic">electronic</option>
+                        <option value = "Gadget">gadget</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset style = "border-color: gray; border-radius:8px"     >
+                <legend>Misc.</legend>
+                <div>
+                    <label for="inventoryAmount" style="display:inline-block;width:160px;">Inventory Amount</label>
+                    <input 
+                    type = "number"
+                    id = "inventoryAmount"
+                    name = "inventoryAmount"
+                    value = "50"
+                    />
+                </div>
+                <div>
+                    <label for="listPrice" style="display:inline-block;width:160px;">List Price</label>
+                    <input 
+                    type = "number"
+                    id = "listPrice"
+                    name = "listPrice"
+                    value = "200"
+                    />
+                </div>
+                <div>
+                    <label for="availableStore" style="display:inline-block;width:160px;">Available Stores</label>
+                    <input type="checkbox" id = "c1" name="availableStore[]" value="Bangkok" checked>Bangkok
+                    <input type="checkbox" id = "c2" name="availableStore[]" value="Pattaya">Pattaya
+                    <input type="checkbox" id = "c3" name="availableStore[]" value="Phuket">Phuket
+                </div>
+                <div>
+                    <label for="availableStatus" style="display:inline-block;width:160px;">Available Status</label>
+                    <input type="radio" id = "r1" name="availableStatus[]" value="Active" checked>Active
+                    <input type="radio" id = "r2" name="availableStatus[]" value="InActive">InActive 
+                </div>
+            </fieldset>   
+            <fieldset style = "border-color: gray; border-radius:8px">
+                <legend>Staff</legend>
+                <div>
+                    <label for="staffEmail" style="display:inline-block;width:160px;">Staff Email</label>
+                    <input 
+                    type = "email"
+                    id = "staffEmail"
+                    name = "staffEmail"
+                    value = "yourschoolemail@student.au.edu"
+                    />
+                </div>
+            </fieldset>
+            <div style="text-align:right; margin-top:15px;">
+                <input type="submit" id="submit" name="submit" value = "Submit Form" 
+                style = "background:blue; color:white; padding: 8px 16px; border-radius:5px">
+            </div>
+        </form>
+    </body>
+</html>
